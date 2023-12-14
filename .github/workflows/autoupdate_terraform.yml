@@ -16,7 +16,7 @@ jobs:
         - uses: actions/checkout@v4
         - name: Build Module
           shell: pwsh
-          run: ./terraform/update.ps1
+          run: ./.scripts/update_nuspec.ps1
 
         - name: Configure git
           run: |

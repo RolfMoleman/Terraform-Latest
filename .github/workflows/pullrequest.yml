@@ -201,8 +201,7 @@ jobs:
   ###################################################################
 
   terraform-docs:
-    needs: tfupdate
-    if: ${{ always() && (needs.tfupdate.result == 'success' || needs.tfupdate.result == 'failure') && github.event_name != 'cancel' }}
+    if: ${{ always() && github.event_name != 'cancel' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

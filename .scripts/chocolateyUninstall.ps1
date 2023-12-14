@@ -1,1 +1,1 @@
-﻿UnInstall-ChocolateyZipPackage "terraform" "terraformInstall.zip"
+UnInstall-ChocolateyZipPackage "terraform-latest" "terraformInstall.zip"

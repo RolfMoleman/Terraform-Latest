@@ -45,127 +45,13 @@ env:
   VALIDATE_ALL_CODEBASE: true
 
 jobs:
-  tfupdate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      ##############################################################
-      #######                TERRAFORM                       #######
-      ##############################################################
-
-      - name: Update terraform
-        uses: HENNGE/tfupdate-action@v1.0.7
-        if: success() || failure()
-        with:
-          base_branch: "main"
-          file_path: "./"
-          label: "dependencies"
-          recursive: true
-          resource: "terraform"
-
-      ##############################################################
-      #######             PRIVATE MODULES                    #######
-      ##############################################################
-
-      #- name: Update CAG terraform-azurerm-subnet module
-      #  uses: HENNGE/tfupdate-action@v1.0.7
-      #  if: success() || failure()
-      #  with:
-      #    base_branch: "main"
-      #    recursive: true
-      #    resource: "module"
-      #    module_name: "constellationautomotivegroup/terraform-azurerm-subnet"
-      #    source_type: "github"
-      #    file_path: "./"
-
-      ##############################################################
-      #######             PUBLIC MODULES                     #######
-      ##############################################################
-
-      - name: Update terraform AzureRM Naming module
-        uses: HENNGE/tfupdate-action@v1.0.7
-        if: success() || failure()
-        with:
-          base_branch: "main"
-          recursive: true
-          #recursive_path: "./"
-          resource: "module"
-          module_name: "Azure/naming/azurerm"
-          source_type: "tfregistryModule"
-          file_path: "./"
-
-      ##############################################################
-      #######                PROVIDERS                       #######
-      ##############################################################
-
-      - name: Update terraform aws provider
-        uses: HENNGE/tfupdate-action@v1.0.7
-        if: success() || failure()
-        with:
-          base_branch: "main"
-          recursive: true
-          resource: "provider"
-          provider_name: "aws"
-          file_path: "./"
-
-      - name: Update terraform azuread provider
-        uses: HENNGE/tfupdate-action@v1.0.7
-        if: success() || failure()
-        with:
-          base_branch: "main"
-          recursive: true
-          resource: "provider"
-          provider_name: "azuread"
-          file_path: "./"
-
-      - name: Update terraform azuredevops provider
-        uses: HENNGE/tfupdate-action@v1.0.7
-        if: success() || failure()
-        with:
-          base_branch: "main"
-          recursive: true
-          resource: "provider"
-          provider_name: "azuredevops"
-          file_path: "./"
-
-      - name: Update terraform azurerm provider
-        uses: HENNGE/tfupdate-action@v1.0.7
-        if: success() || failure()
-        with:
-          base_branch: "main"
-          recursive: true
-          resource: "provider"
-          provider_name: "azurerm"
-          file_path: "./"
-
-      - name: Update terraform random provider
-        uses: HENNGE/tfupdate-action@v1.0.7
-        if: success() || failure()
-        with:
-          base_branch: "main"
-          recursive: true
-          resource: "provider"
-          provider_name: "random"
-          file_path: "./"
-
-      - name: Update terraform time provider
-        uses: HENNGE/tfupdate-action@v1.0.7
-        if: success() || failure()
-        with:
-          base_branch: "main"
-          recursive: true
-          resource: "provider"
-          provider_name: "time"
-          file_path: "./"
 
   ##############################################################
   #######                update docs after               #######
   ##############################################################
 
   terraform-docs:
-    if: ${{ !cancelled() && (needs.tfupdate.result == 'success' || needs.tfupdate.result == 'failure') }} }} # only run after tfupdate job has finished
-    needs: tfupdate
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -215,7 +101,7 @@ jobs:
           #working-dir: .
 
   megalinter:
-    if: ${{ !cancelled() && (needs.terraform-docs.result == 'success' || needs.terraform-docs.result == 'failure') }} }} # only run after tfupdate job has finished
+    if: ${{ !cancelled() && (needs.terraform-docs.result == 'success' || needs.terraform-docs.result == 'failure') }} # only run after tfupdate job has finished
     needs: terraform-docs
     name: MegaLinter
     runs-on: ubuntu-latest

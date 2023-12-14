@@ -1,0 +1,67 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - develop
+    paths-ignore:
+      - .github/**
+  workflow_dispatch:
+
+jobs:
+  build-terraform:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Choco pack
+        uses: crazy-max/ghaction-chocolatey@v3.0.0
+        with:
+          args: pack .\.packages\terraform.nuspec
+
+      - name: Choco install
+        uses: crazy-max/ghaction-chocolatey@v3.0.0
+        with:
+          args: install -source . -force terraform
+
+      - name: Terraform Version
+        run: terraform -version
+
+      - name: Save Choco package
+        uses: actions/upload-artifact@v3
+        with:
+          name: terraform
+          path: "${{ github.workspace }}/*.nupkg"
+
+  publish-terraform:
+    runs-on: windows-latest
+
+    needs: build-terraform
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore Choco package
+        uses: actions/download-artifact@v3
+        with:
+          name: terraform
+          path: ${{ github.workspace }}
+
+      - name: Choco install
+        uses: crazy-max/ghaction-chocolatey@v3.0.0
+        with:
+          args: install -source . -force terraform
+
+      - name: Terraform Version
+        run: terraform -version
+
+      - name: Add Choco API Key
+        uses: crazy-max/ghaction-chocolatey@v3.0.0
+        with:
+          args: apikey --key ${{secrets.CHOCO_API_KEY}} --source https://push.chocolatey.org/
+
+      - name: Publish (noop)
+        uses: crazy-max/ghaction-chocolatey@v3.0.0
+        with:
+          args: push --source https://push.chocolatey.org/

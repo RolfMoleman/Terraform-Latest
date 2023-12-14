@@ -1,0 +1,176 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-added-large-files
+        name: Check for newly added large files
+        log_file: ./pre-commit_logs/check-large.log
+
+      - id: check-case-conflict
+        name: Check for unnecessary text case changes
+        log_file: ./pre-commit_logs/check-case-conflict.log
+
+      - id: check-merge-conflict
+        name: check for git merge conflicts
+        log_file: ./pre-commit_logs/check-merge-conflict.log
+
+      - id: check-json
+        name: check JSON validity
+        exclude: (config/.cspell.json|build/arm_templates/blank_arm_template.json)
+        log_file: ./pre-commit_logs/check-json.log
+
+      - id: check-yaml
+        name: check YAML and YML validity
+        log_file: ./pre-commit_logs/check-yml.log
+
+      - id: detect-private-key
+        name: check for unencrypted secrets
+        log_file: ./pre-commit_logs/private-key.log
+
+      - id: end-of-file-fixer
+        name: ensure all file ends are consistent
+        log_file: ./pre-commit_logs/file-end.log
+
+      #- id: mixed-line-ending
+      #  log_file: ./pre-commit_logs/line-end.log
+
+      - id: trailing-whitespace
+        name: remove trailing whitespace
+        log_file: ./pre-commit_logs/trail whitespace.log
+
+  - repo: https://github.com/streetsidesoftware/cspell-cli
+    rev: v8.1.1
+    hooks:
+      - id: cspell
+        args:
+          - --config ./.config/.cspell.json
+        name: code spell check for whole repository
+        log_file: cspell.log
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.5
+    hooks:
+      - id: prettier
+        name: run Prettier by Prettier
+        files: \.(js|ts|jsx|tsx|css|less|html|json|markdown|md|yaml|yml)$ # include the listed extensions
+        #exclude:  # files are excluded using the prettierignore files
+        log_file: ./pre-commit_logs/prettier.log
+
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.84.0 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+    hooks:
+      #run native terraform format
+      - id: terraform_fmt
+        name: Run terraform fmt against terraform
+        #files: ^/build/terraform/.+(.tf|.terraform.lock.hcl)$
+        #files: ^./build/terraform/.+(\.tf|\.tfvars|\.terraform.lock.hcl)$
+        #files: r"^(.*{\\\/])?[^\\\/]*\.(tf|tfvars|terraform\.lock\.hcl)$"
+        #files: ^build/terraform/.*\.(tf|tfvars|terraform\.lock\.hcl)$
+        files: ^(.*[\\\/])?[^\\\/]*\.(tf|tfvars|terraform\.lock\.hcl)$
+        #exclude: \.terraform\/.*$
+        exclude: ""
+        verbose: true
+        log_file: ./pre-commit_logs/tffmt.log
+
+
+      ##############################################################
+      #######        Terraform version updates               #######
+      ##############################################################
+
+      - id: tfupdate
+        name: Autoupdate Terraform required version in terraform to latest
+        args:
+          - --args=terraform
+          - --args==./build/
+          - --args==--recursive
+        #files: ^/build/.+(\.tf)$
+        files: ^(.*[\\\/])?[^\\\/]*\.(tf)$
+        verbose: true
+        log_file: ./pre-commit_logs/tfupdate_terraform.log
+      
+
+  ##############################################################
+  #######       Generate Terraform Documentation         #######
+  ##############################################################
+
+  - repo: https://github.com/terraform-docs/terraform-docs
+    rev: v0.16.0 # Git tag specifying the hook
+    hooks:
+      - id: terraform-docs-go
+        name: Put terraform-docs into main readme.md
+        args:
+          [
+            markdown,
+            '.\build\terraform\',
+            --config,
+            '.\.config\.readme-terraform-docs.yml',
+          ]
+        verbose: false
+        log_file: ./pre-commit_logs/terraform-docs_terraform_root.log
+
+  ###############################################################
+  #######  Full repo multi-language security and linting  #######
+  ###############################################################
+  - repo: https://github.com/oxsecurity/megalinter
+    rev: v7.7.0 # Git tag specifying the hook, not mega-linter-runner, version
+    hooks:
+      - id: megalinter-incremental # Faster, less thorough
+        name: Run megalinter incremental scan
+        args:
+          - mega-linter-runner
+          - --containername
+          - "megalinter-incremental"
+          - --remove-container
+          - --fix
+          - --env
+          - "'APPLY_FIXES=all'"
+          - --env
+          - "'CLEAR_REPORT_FOLDER=true'"
+          - --env
+          - "'LOG_LEVEL=warning'"
+          - --env
+          - "'TERRAFORM_CHECKOV_ARGUMENTS=--include-all-checkov-policies'"
+          - --env
+          - "'TERRAFORM_CHECKOV_CLI_LINT_MODE=file '"
+          - --env
+          - "'TERRAFORM_TERRASCAN_ARGUMENTS=--verbose'"
+          - --env
+          - "'TERRAFORM_TERRASCAN_ARGUMENTS=--show-passed'"
+          - --env
+          - "'TERRAFORM_TFLINT_ARGUMENTS=--color'"
+          - --env
+          - "'MARKDOWN_DEFAULT_STYLE=markdownlint'"
+          - --env
+          - "'PRINT_ALL_FILES=true'"
+          - --env
+          - "'PRINT_ALPACA=true'"
+          - --env
+          - "'SHOW_ELAPSED_TIME=true'"
+          - --env
+          - "'SARIF_REPORTER=true'"
+          - --env
+          - "'TAP_REPORTER=true'"
+          - --env
+          - "'TAP_REPORTER_SUB_FOLDER=tap'"
+          - --env
+          - "'JSON_REPORTER=true'"
+          - --env
+          - "'JSON_REPORTER_OUTPUT_DETAIL=detailed'"
+          - --env
+          - "'SHOW_SKIPPED_LINTERS=true'"
+          - --env
+          - "'VALIDATE_ALL_CODEBASE=false'"
+        stages:
+          - commit
+        verbose: true # Always show costs
+        log_file: ./pre-commit_logs/megalinter_local_root.log
+
+  ###############################################################
+  #######         Commit verification and signing         #######
+  ###############################################################
+
+  - repo: https://github.com/mattlqx/pre-commit-sign
+    rev: v1.1.3
+    hooks:
+      - id: sign-commit
+        name: sign commits to identify pre-commit has been ran

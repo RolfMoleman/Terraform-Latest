@@ -42,7 +42,7 @@
     "fileMatch": ["(^|/)\\.gitmodules$"],
     "versioning": "git"
   },
-  "gitAuthor": "CAG Renovate <renovate@ca-grp.com>",
+  "gitAuthor": "Renovate <renovate@rolfmoleman.com>",
   "github-actions": {
     "fileMatch": [
       "^(workflow-templates|\\.(?:github|gitea|forgejo)/workflows)/[^/]+\\.ya?ml$",

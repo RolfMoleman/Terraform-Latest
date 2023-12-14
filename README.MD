@@ -309,7 +309,7 @@ Project Link: [https://github.com/RolfMoleman/Terraform-Latest](https://github.c
 [issues-shield]: https://img.shields.io/github/issues/RolfMoleman/Terraform-Latest.svg?style=for-the-badge
 [issues-url]: https://github.com/RolfMoleman/Terraform-Latest/issues
 [license-shield]: https://img.shields.io/github/license/RolfMoleman/Terraform-Latest.svg?style=for-the-badge
-[license-url]: https://github.com/RolfMoleman/Terraform-Latest/blob/main/LICENSE.md
+[license-url]: https://github.com/RolfMoleman/Terraform-Latest/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/carlrdawson
 

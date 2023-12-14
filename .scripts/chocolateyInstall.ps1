@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 
 # DO NOT CHANGE THESE MANUALLY. USE update.ps1
 $url = 'https://releases.hashicorp.com/terraform/1.6.5/terraform_1.6.5_windows_386.zip'
@@ -8,11 +8,11 @@ $checksum64 = '5c4644f8c83f3851b70e3c3a52c68e36949b1f8436617577a69af162b4a3c815'
 
 $unzipLocation = Split-Path -Parent $MyInvocation.MyCommand.Definition
 
-if ([System.IO.Directory]::Exists("$env:ChocolateyInstall\lib\terraform")) {
-  if ([System.IO.Directory]::Exists("$env:ChocolateyInstall\lib\terraform\tools")) {
+if ([System.IO.Directory]::Exists("$env:ChocolateyInstall\lib\terraform-latest")) {
+  if ([System.IO.Directory]::Exists("$env:ChocolateyInstall\lib\terraform-latest\tools")) {
     # clean old plugins and ignore files
     Write-Host "Removing old terraform plugins"
-    Remove-Item "$env:ChocolateyInstall\lib\terraform\tools\terraform-*.*"
+    Remove-Item "$env:ChocolateyInstall\lib\terraform-latest\tools\terraform-*.*"
   }
 }
 else {
@@ -20,13 +20,13 @@ else {
     if ([System.IO.Directory]::Exists("$env:ALLUSERSPROFILE\chocolatey\lib\terraform\tools")) {
       # clean old plugins and ignore files
       Write-Host "Removing old terraform plugins"
-      Remove-Item "$env:ALLUSERSPROFILE\chocolatey\lib\terraform\tools" -Include "terraform-*.*"
+      Remove-Item "$env:ALLUSERSPROFILE\chocolatey\lib\terraform-latest\tools" -Include "terraform-*.*"
     }
   }
 }
 
 $packageParams = @{
-  PackageName   = "terraform"
+  PackageName   = "terraform-latest"
   UnzipLocation = $unzipLocation
   Url           = $url
   Url64         = $url64

@@ -8,13 +8,22 @@ permissions:
 on:
   pull_request:
     branches:
-      - develop
+      - main
 
   workflow_dispatch:
 
 jobs:
+  renovate-merge-bot:
+    name: "auto merge renovate"
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - uses: int128/renovate-merge-bot@v1
+        with:
+          github-app-id: ${{ secrets.BOT_APP_ID }}
+          github-app-private-key: ${{ secrets.BOT_APP_PRIVATE_KEY }}
   auto-merge:
-    name: "auto-merge"
+    name: "auto merge dependabot"
     runs-on: ubuntu-latest
     if: always()
     steps:

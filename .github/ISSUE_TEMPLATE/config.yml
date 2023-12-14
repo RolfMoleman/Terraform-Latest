@@ -1,17 +1,9 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Module_Name Bug Reports and Feature Requests
-    url: https://github.com/consteallationautomotivegroup/Module_Name/issues/new/choose
-    about: Constellation Automotive Group - Terraform Module Module_Name, (Module_Description) has it's own issue log.
+  - name: RolfMoleman/Terraform-Latest Bug Reports and Feature Requests
+    url: https://github.com/RolfMoleman/Terraform-Latest/issues/new/choose
+    about: RolfMoleman/Terraform-Latest, has it's own issue log.
 
-  - name: Module_Name Roadmap
-    url: https://github.com/constellationautomotivegroup/Module_Name/blob/main/README.md
-    about: View the Roadmap for the upcoming work planned on the module template.
-
-  - name: Module Template Bug Reports and Feature Requests
-    url: https://github.com/consteallationautomotivegroup/terraform_module_template/issues/new/choose
-    about: Constellation Automotive Group - Terraform Module Template, which provides the workflow files, issue templates, and other base files that makes up all our modules has it's own issue log.
-
-  - name: Module Template Roadmap
-    url: https://github.com/constellationautomotivegroup/terraform_module_template/blob/main/README.md
-    about: View the Roadmap for the upcoming work planned on the module template.
+  - name: RolfMoleman/Terraform-Latest Roadmap
+    url: https://github.com/RolfMoleman/Terraform-Latest/blob/main/README.md
+    about: View the Roadmap for the upcoming work planned on the RolfMoleman/Terraform-Latest.

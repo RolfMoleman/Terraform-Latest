@@ -31,36 +31,6 @@ content: |-
 
   ---
 
-  <!-- consuming Module_Name -->
-  ### Consuming terraform_module_template
-
-    To consume this module add the following to your module.tf:
-  ```hcl
-    module "Module_Name" {
-      {{"\t"}} source  = "github.com/constellationautomotivegroup/Module_Name.git"
-  {{- if .Module.RequiredInputs }}
-      {{"\n\t"}} # Required variables
-      {{- range .Module.RequiredInputs }}
-      {{"\t"}} {{ .Name }}  = {{ .GetValue }}
-      {{- end }}
-      {{- end }}
-  {{- if .Module.OptionalInputs }}
-      {{"\n\t"}} # Optional variables
-      {{- range .Module.OptionalInputs }}
-      {{"\t"}} {{ .Name }}  = {{ .GetValue | printf "%s" }}
-      {{- end }}
-      {{- end }}
-    }
-    ```
-
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
-
   {{ .Resources }}
 
   ---

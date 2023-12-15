@@ -1,4 +1,4 @@
-Install-Module -Name AU
+#Install-Module -Name AU
 
 #Requires -Version 5.0
 #Requires -Modules AU

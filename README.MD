@@ -123,7 +123,6 @@ Once this has happened, the branch will automatically merge with main causing th
 ### Built With
 
 - [cspell](https://github.com/streetsidesoftware/cspell-cli)
-
 - [GitVersion](https://github.com/GitTools/GitVersion)
 - [Infracost](https://github.com/infracost/infracos)
 - [Markdown](https://www.markdownguide.org/)
@@ -193,6 +192,7 @@ No inputs.
 ---
 
 <!-- Readme Navigation -->
+
 
 [(Back to the Table of Contents)](#table-of-contents)
 

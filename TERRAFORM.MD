@@ -1,3 +1,6 @@
+<!-- markdownlint-disable -->
+<!-- markdown-table-prettify-ignore-start -->
+<!-- prettier-ignore-start -->
 <!-- start_of_terraform_docs -->
 # Terraform
 
@@ -73,3 +76,6 @@ No modules.
 
 ---
 <!-- end_of_terraform_docs -->
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- markdown-table-prettify-ignore-end -- >

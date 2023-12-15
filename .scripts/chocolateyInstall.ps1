@@ -12,15 +12,15 @@ if ([System.IO.Directory]::Exists("$env:ChocolateyInstall\lib\terraform-latest")
   if ([System.IO.Directory]::Exists("$env:ChocolateyInstall\lib\terraform-latest\tools")) {
     # clean old plugins and ignore files
     Write-Host "Removing old terraform plugins"
-    Remove-Item "$env:ChocolateyInstall\lib\terraform-latest\tools\terraform-*.*"
+    Remove-Item "$env:ChocolateyInstall\lib\terraform-latest\terraform-*.*"
   }
 }
 else {
-  if ([System.IO.Directory]::Exists("$env:ALLUSERSPROFILE\chocolatey\lib\terraform")) {
-    if ([System.IO.Directory]::Exists("$env:ALLUSERSPROFILE\chocolatey\lib\terraform\tools")) {
+  if ([System.IO.Directory]::Exists("$env:ALLUSERSPROFILE\chocolatey\lib\terraform-latest")) {
+    if ([System.IO.Directory]::Exists("$env:ALLUSERSPROFILE\chocolatey\lib\terraform-latest\")) {
       # clean old plugins and ignore files
       Write-Host "Removing old terraform plugins"
-      Remove-Item "$env:ALLUSERSPROFILE\chocolatey\lib\terraform-latest\tools" -Include "terraform-*.*"
+      Remove-Item "$env:ALLUSERSPROFILE\chocolatey\lib\terraform-latest\" -Include "terraform-*.*"
     }
   }
 }

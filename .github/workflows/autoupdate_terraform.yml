@@ -6,6 +6,9 @@ permissions:
   contents: write
   pull-requests: write
 on: create
+  
+workflow_dispatch:
+
 
 jobs:
   job1:

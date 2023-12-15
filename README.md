@@ -1,6 +1,3 @@
-<!-- markdownlint-disable -->
-<!-- markdown-table-prettify-ignore-start -->
-<!-- prettier-ignore-start -->
 <!-- start_of_terraform_docs -->
 # Terraform
 
@@ -10,11 +7,11 @@ The below documentation was generated via Terraform docs using pre-commit
 
 <!-- Readme Navigation -->
 
-[(Back to the Top)](#Terraform)
+[(Back to the Table of Contents)](#table-of-contents)
 
 ---
 
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
@@ -24,11 +21,11 @@ The below documentation was generated via Terraform docs using pre-commit
 
 <!-- Readme Navigation -->
 
-[(Back to the Top)](#Terraform)
+[(Back to the Table of Contents)](#table-of-contents)
 
 ---
 
-## Resources
+### Resources
 
 No resources.
 
@@ -36,11 +33,11 @@ No resources.
 
 <!-- Readme Navigation -->
 
-[(Back to the Top)](#Terraform)
+[(Back to the Table of Contents)](#table-of-contents)
 
 ---
 
-## Inputs
+### Inputs
 
 No inputs.
 
@@ -48,11 +45,11 @@ No inputs.
 
 <!-- Readme Navigation -->
 
-[(Back to the Top)](#Terraform)
+[(Back to the Table of Contents)](#table-of-contents)
 
 ---
 
-## Outputs
+### Outputs
 
 No outputs.
 
@@ -60,11 +57,11 @@ No outputs.
 
 <!-- Readme Navigation -->
 
-[(Back to the Top)](#Terraform)
+[(Back to the Table of Contents)](#table-of-contents)
 
 ---
 
-## Modules
+### Modules
 
 No modules.
 
@@ -72,7 +69,7 @@ No modules.
 
 <!-- Readme Navigation -->
 
-[(Back to the Top)](#Terraform)
+[(Back to the Table of Contents)](#table-of-contents)
 
 ---
 
@@ -162,10 +159,7 @@ tfupdate provider time . --version ">=$(tfupdate release latest hashicorp/time -
 
 <!-- Readme Navigation -->
 
-[(Back to the Top)](#Terraform)
+[(Back to the Table of Contents)](#table-of-contents)
 
 ---
 <!-- end_of_terraform_docs -->
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- markdown-table-prettify-ignore-end -- >

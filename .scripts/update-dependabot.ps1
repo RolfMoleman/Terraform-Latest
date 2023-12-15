@@ -23,7 +23,7 @@ function packageEcosystem() {
         #[string] $timeZone = 'Europe/London' # default = Europe/London
     )
 
-$block = @"
+    $block = @"
   - package-ecosystem: "$ecosystem"
     directory: "$relPath"
     groups:
@@ -69,7 +69,7 @@ foreach ($file in $files) {
     if ($file.Name -eq 'versions.tf') {
         Write-Output "Found versions.tf in $($file.FullName)"
         $ecosystem = 'terraform'
-        $group =$file.directory.Name + ":"
+        $group = $file.directory.Name + ":"
         $block = packageEcosystem -ecosystem $ecosystem `
             -relpath $relPath `
             -group $group `
@@ -79,7 +79,7 @@ foreach ($file in $files) {
     elseif ($file.Name -eq 'providers.tf') {
         Write-Output "Found providers.tf in $($file.FullName)"
         $ecosystem = 'terraform'
-        $group =$file.directory.Name + ":"
+        $group = $file.directory.Name + ":"
         $block = packageEcosystem -ecosystem $ecosystem `
             -relpath $relPath `
             -group $group `
@@ -89,7 +89,7 @@ foreach ($file in $files) {
     elseif ($file.Name -eq 'main.tf') {
         Write-Output "Found main.tf in $($file.FullName)"
         $ecosystem = 'terraform'
-        $group =$file.directory.Name + ":"
+        $group = $file.directory.Name + ":"
         $block = packageEcosystem -ecosystem $ecosystem `
             -relpath $relPath `
             -group $group `
@@ -99,7 +99,7 @@ foreach ($file in $files) {
     elseif ($file.Name -eq 'Dockerfile') {
         Write-Output "Found Dockerfile in $($file.FullName)"
         $ecosystem = 'docker'
-        $group =$file.directory.Name + ":"
+        $group = $file.directory.Name + ":"
         $block = packageEcosystem -ecosystem $ecosystem `
             -relpath $relPath `
             -group $group `
@@ -125,7 +125,7 @@ foreach ($file in $files) {
     elseif ($file.Name -like '*.sln') {
         Write-Output "Found *.sln in $($file.FullName)"
         $ecosystem = 'nuget'
-        $group =$file.directory.Name + ":"
+        $group = $file.directory.Name + ":"
         $block = packageEcosystem -ecosystem $ecosystem `
             -relpath $relPath `
             -group $group `

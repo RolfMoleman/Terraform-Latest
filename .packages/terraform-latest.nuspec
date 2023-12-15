@@ -41,7 +41,7 @@ For more information on previous releases, check out the changelog on [GitHub](h
     <licenseUrl>https://github.com/hashicorp/terraform/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <!-- Important note about https://cdn.rawgit.com: Files are cached permanently after the first request. Use commit URLs when updating the icon. -->
-    <iconUrl>https://raw.githubusercontent.com/RolfMoleman/Terraform-Latest/commit/c664bf669cc18dbc5f6d2df517a1ec3a7f0753c3/.assets/terraform.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/RolfMoleman/Terraform-Latest/main/.assets/terraform.png</iconUrl>
   </metadata>
   <files>
     <file src="..\.scripts\**" target=".scripts" />

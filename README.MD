@@ -8,6 +8,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -21,11 +22,17 @@
 
 <!-- Github Workflow BADGES -->
 
-[![GitHub Workflow Status (Automatically update terraform.nuspec)](https://img.shields.io/github/actions/workflow/status/RolfMoleman/Terraform-Latest/autoupdate_terraform.yml?style=for-the-badge&label=Automatically%20update%20terraform.nuspec)]()
+[![GitHub Workflow Status (Automatically update terraform.nuspec)](https://img.shields.io/github/actions/workflow/status/RolfMoleman/Terraform-Latest/autoupdate_terraform.yml?style=for-the-badge&label=Automatically%20update%20terraform.nuspec)](https://github.com/RolfMoleman/Terraform-Latest/actions/workflows/autoupdate_terraform.yml)
 
-[![GitHub Workflow Status (build)](https://img.shields.io/github/actions/workflow/status/RolfMoleman/Terraform-Latest/build.yml?style=for-the-badge&label=Build)]()
+[![GitHub Workflow Status (build)](https://img.shields.io/github/actions/workflow/status/RolfMoleman/Terraform-Latest/build.yml?style=for-the-badge&label=Build)](https://github.com/RolfMoleman/Terraform-Latest/actions/workflows/build.yml)
 
-[![GitHub Workflow Status (Publish chocolatey package)](https://img.shields.io/github/actions/workflow/status/RolfMoleman/Terraform-Latest/publish.yml?style=for-the-badge&label=Publish%20Chocolatey%20PAckage)]()
+[![GitHub Workflow Status (Nightly Maintenance)](https://img.shields.io/github/actions/workflow/status/RolfMoleman/Terraform-Latest/scheduled_maintenance.yml?style=for-the-badge&label=Nightly%20Scheduled%20Maintenance)](https://github.com/RolfMoleman/Terraform-Latest/actions/workflows/scheduled_maintenance.yml)
+
+[![GitHub Workflow Status (Publish chocolatey package)](https://img.shields.io/github/actions/workflow/status/RolfMoleman/Terraform-Latest/publish.yml?style=for-the-badge&label=Publish%20Chocolatey%20PAckage)](https://github.com/RolfMoleman/Terraform-Latest/actions/workflows/publish.yml)
+
+[![GitHub Workflow Status (Standard Pull Request)](https://img.shields.io/github/actions/workflow/status/RolfMoleman/Terraform-Latest/pullrequest.yml?style=for-the-badge&label=Standard%20Pull%20Request)](https://github.com/RolfMoleman/Terraform-Latest/actions/workflows/publish.yml)
+
+[![GitHub Workflow Status (Sync issue to Azure DevOps work item)](https://img.shields.io/github/actions/workflow/status/RolfMoleman/Terraform-Latest/Board_Updater.yml?style=for-the-badge&label=Sync%20issue%20to%20Azure%20DevOps%20work%20item)](https://github.com/RolfMoleman/Terraform-Latest/actions/workflows/Board_Updater.yml)
 
 <!-- Made With Badges -->
 
@@ -63,12 +70,12 @@ these are the pre-commit hooks used for this repo:
 <!-- Azure Devops Navigation -->
 <!-- markdown-table-prettify-ignore-start -->
 
-|                                                                                                                |                                                                                                             |                                                                                                      |                                                                                                      |                                                                                                                      |                                                                                             |                                                                                                             |                                                                                                     |                                                                                                                    |
-| :------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------: |
-|                                                                                                                |                                                                                                             |                                                                                                      |                                                                                                      |                [![terraform-latest][logo-image]](https://github.com/RolfMoleman/Terraform-Latest)                |                                                                                             |                                                                                                             |                                                                                                     |                                                                                                                    |
-|                                                                                                                |                                                                                                             |                                                                                                      |                                                                                                      | [**README**](https://github.com/RolfMoleman/Terraform-Latest/blob/main/README.md) |                                                                                             |                                                                                                             |                                                                                                     |                                                                                                                    |
-|                                                                                                                |                                                                                                             |                                                                                                      |                                                                                                      |       [**DOCUMENTS**](https://dev.azure.com/Organisation_Name/Project_Name/_git/terraform-latest?path=/docs&version=GBmaster)        |                                                                                             |                                                                                                             |                                                                                                     |                                                                                                                    |
-| [Checkov Baseline](https://dev.azure.com/Organisation_Name/Project_Name/_git/terraform-latest?path=/.config/.checkov.baseline) | [Cspell config file](https://dev.azure.com/Organisation_Name/Project_Name/_git/terraform-latest?path=/.config/.cspell.json) | [Gitversion config](https://dev.azure.com/Organisation_Name/Project_Name/_git/terraform-latest?path=/GitVersion.yml) | [JSCPD config](https://dev.azure.com/Organisation_Name/Project_Name/_git/terraform-latest?path=/.config/.jspcd.json) |  [KICS config file](https://dev.azure.com/Organisation_Name/Project_Name/_git/terraform-latest?path=/kics.config&version=GBmaster)   | [License file](https://dev.azure.com/Organisation_Name/Project_Name/_git/terraform-latest?path=/LICENSE.md) | [Megalinter config file](https://dev.azure.com/Organisation_Name/Project_Name/_git/terraform-latest?path=/.mega-linter.yml) | [Readme Template](https://dev.azure.com/Organisation_Name/Project_Name/_git/terraform-latest?path=/BLANK_README.md) | [tflint config file](https://dev.azure.com/Organisation_Name/Project_Name/_git/terraform-latest?path=/build/terraform/.tflint.hcl) |
+|                                                                                                                                |                                                                                                                             |                                                                                                                      |                                                                                                                      |                                                                                                                                   |                                                                                                             |                                                                                                                             |                                                                                                                     |                                                                                                                                    |
+| :----------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                                                                                |                                                                                                                             |                                                                                                                      |                                                                                                                      |                        [![terraform-latest][logo-image]](https://github.com/RolfMoleman/Terraform-Latest)                         |                                                                                                             |                                                                                                                             |                                                                                                                     |                                                                                                                                    |
+|                                                                                                                                |                                                                                                                             |                                                                                                                      |                                                                                                                      |                         [**README**](https://github.com/RolfMoleman/Terraform-Latest/blob/main/README.md)                         |                                                                                                             |                                                                                                                             |                                                                                                                     |                                                                                                                                    |
+|                                                                                                                                |                                                                                                                             |                                                                                                                      |                                                                                                                      |            |                                                                                                             |                                                                                                                             |                                                                                                                     |                                                                                                                                    |
+| [Checkov Baseline](https://github.com/RolfMoleman/Terraform-Latest/blob/main/.config/.checkov.baseline) | [Cspell config file](https://github.com/RolfMoleman/Terraform-Latest/blob/main/.config/.cspell.json) | [Gitversion config](https://github.com/RolfMoleman/Terraform-Latest/blob/main/.config/GitVersion.yml) | [JSCPD config](https://github.com/RolfMoleman/Terraform-Latest/blob/main/.config/.jspcd.json) | [KICS config file](https://github.com/RolfMoleman/Terraform-Latest/blob/main/.config/kics.config) | [License file](https://github.com/RolfMoleman/Terraform-Latest/blob/main/LICENSE) | [Megalinter config file](https://github.com/RolfMoleman/Terraform-Latest/blob/main/.config/.mega-linter.yml) |  | [tflint config file](https://github.com/RolfMoleman/Terraform-Latest/blob/main/.config/build/terraform/.tflint.hcl) |
 
 <!-- markdown-table-prettify-ignore-end -->
 <!-- TABLE OF CONTENTS -->
@@ -80,12 +87,18 @@ these are the pre-commit hooks used for this repo:
   - [About The Project](#about-the-project)
     - [Built With](#built-with)
     - [Terraform](#terraform)
-  - [Getting Started](#getting-started)
+- [Terraform](#terraform-1)
+    - [Requirements](#requirements)
+    - [Resources](#resources)
+    - [Inputs](#inputs)
+    - [Outputs](#outputs)
+    - [Modules](#modules)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
   - [Usage](#usage)
   - [Roadmap](#roadmap)
   - [Contributing](#contributing)
+    - [Contributing Prerequisites](#contributing-prerequisites)
   - [License](#license)
   - [Contact](#contact)
   - [Acknowledgments](#acknowledgments)
@@ -94,9 +107,11 @@ these are the pre-commit hooks used for this repo:
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://community.chocolatey.org/packages/terraform-latest)
 
-Repo_Description
+This repository contains the code and workflows to automatically build and publish the terraform-latest chocolatey package.
+this project uses a combination of dependabot and renovate to pickup the latest version fo terraform as soon as possible, to update the required_version in versions.tf and automatically produce the updated nuspec file.
+Once this has happened, the branch will automatically merge with main causing the build and publish pipeline to trigger which will cpush the latest version of terraform to chocolatey :chocolate_bar:
 
 ---
 
@@ -108,9 +123,18 @@ Repo_Description
 
 ### Built With
 
-- [Terraform](https://nextjs.org/)
-- [Powershell](https://reactjs.org/)
-- [Github Actions](https://vuejs.org/)
+- [cspell](https://github.com/streetsidesoftware/cspell-cli)
+  
+- [GitVersion](https://github.com/GitTools/GitVersion)
+- [Infracost](https://github.com/infracost/infracos)
+- [Markdown](https://www.markdownguide.org/)
+- [Mermaid](https://mermaid.live/)
+- [Powershell](https://github.com/PowerShell/PowerShell)
+- [Pre-Commit](https://pre-commit.com/)
+- [pre-commit-terraform](https://github.com/antonbabenko/pre-commit-terraform)
+- [prettier](https://github.com/prettier/prettier)
+- [Terraform](https://www.terraform.io/)
+- [Terraform-docs](https://github.com/terraform-docs/terraform-docs)
 
 ---
 
@@ -121,14 +145,83 @@ Repo_Description
 ---
 
 <!-- Terraform -->
-
 ### Terraform
 
 <!-- markdown-table-prettify-ignore-start -->
 <!-- markdownlint-disable -->
 <!-- prettier-ignore-start -->
 <!-- start_of_terraform_docs -->
+The below documentation was generated via Terraform docs using pre-commit
 
+---
+
+<!-- Readme Navigation -->
+
+[(Back to the Table of Contents)](#table-of-contents)
+
+---
+
+#### Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.6.6 |
+
+---
+
+<!-- Readme Navigation -->
+
+[(Back to the Table of Contents)](#table-of-contents)
+
+---
+
+#### Resources
+
+No resources.
+
+---
+
+<!-- Readme Navigation -->
+
+[(Back to the Table of Contents)](#table-of-contents)
+
+---
+
+#### Inputs
+
+No inputs.
+
+---
+
+<!-- Readme Navigation -->
+
+[(Back to the Table of Contents)](#table-of-contents)
+
+---
+
+#### Outputs
+
+No outputs.
+
+---
+
+<!-- Readme Navigation -->
+
+[(Back to the Table of Contents)](#table-of-contents)
+
+---
+
+#### Modules
+
+No modules.
+
+---
+
+<!-- Readme Navigation -->
+
+[(Back to the Table of Contents)](#table-of-contents)
+
+---
 <!-- end_of_terraform_docs -->
 <!-- prettier-ignore-end -->
 <!-- markdownlint-enable -->
@@ -142,42 +235,22 @@ Repo_Description
 
 ---
 
-<!-- GETTING STARTED -->
-
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+This is a list of things that would be beneficial to work on this repo.
 
-- npm
+- Install Chocolatey
 
-  ```sh
-  npm install npm@latest -g
-  ```
+   ```powershell
+   Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+   ```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the Repo
+1. Install the package
 
-   ```sh
-   git clone https://bcagroup@dev.azure.com/bcagroup/Project_Name/terraform-latest.git
-   ```
-
-3. Install NPM packages
-
-   ```sh
-   npm install
-   ```
-
-4. Enter your API in `config.js`
-
-   ```js
-   const API_KEY = "ENTER YOUR API";
+   ```console
+   choco install terraform-latest
    ```
 
 ---
@@ -192,9 +265,11 @@ This is an example of how to list things you need to use the software and how to
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+to use this project install terraform-latest using Chocolatey like so:
 
-_For more examples, please refer to the [Documentation](https://bcagroup@dev.azure.com/bcagroup/Project_Name/terraform-latest/?path=/docs&)_
+```console
+   choco install terraform-latest
+```
 
 ---
 
@@ -208,12 +283,12 @@ _For more examples, please refer to the [Documentation](https://bcagroup@dev.azu
 
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-  - [ ] Nested Feature
+- [ ] Intial release :tada:
+- [ ] Fully automated terraform-latest chocolatey package lifecycle :cool:
+- [ ] more professional branding :new_moon: :godmode:
 
-See the [open issues](https://github.com/RolfMoleman/Terraform-Latest/issues?q=is%3Aopen) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/RolfMoleman/Terraform-Latest/issues?q=is%3Aopen)
+for a full list of proposed features (and known issues).
 
 ---
 
@@ -227,9 +302,11 @@ See the [open issues](https://github.com/RolfMoleman/Terraform-Latest/issues?q=i
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are  **greatly appreciated**.
 
-If you have a suggestion that would make this better, please fork the Repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+If you have a suggestion that would make this better,
+please fork the Repo and create a pull request.
+You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
@@ -237,6 +314,89 @@ Don't forget to give the project a star! Thanks again!
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+---
+**Note**: we ask you to please name branches sennsibly adhering to this naming convention:
+
+1. **main** - we tend to use main now [why?](https://www.theserverside.com/feature/Why-GitHub-renamed-its-master-branch-to-main)
+2. :bulb: **feature** branches created with either a `feature-` prefix or under a folder called feature.
+4. :bug: **bug** branches created with either a `bug-` prefix or under a folder called bug.
+5. :fast_forward: **hotfix** branches created with either a `hotfix-` prefix or under a folder called hotfix.
+
+---
+
+---
+
+<!-- Readme Navigation -->
+
+[(Back to the Table of Contents)](#table-of-contents)
+
+---
+
+### Contributing Prerequisites
+
+To replicate the setup used to initially create this repository you will need
+
+1. Clone the Repo
+
+   ```sh
+   git clone https://github.com/RolfMoleman/Terraform-Latest.git
+   ```
+
+2. Install Chocolatey
+
+   ```powershell
+   Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+   ```
+
+3. Install Node
+
+   ```cmd
+   choco install nodejs
+   ```
+
+4. Install Terraform
+
+   ```cmd
+   choco install terraform-latest
+   ```
+
+5. Install TFlint
+
+   ```cmd
+   choco install tflint
+   ```
+
+6. Install terraform-docs
+
+   ```cmd
+   choco install terraform-docs
+   ```
+
+7. Install Python
+
+   ```cmd
+   choco install python
+   ```
+
+8. Install pip
+
+   ```cmd
+   curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+   python get-pip.py
+   ```
+
+9. Install pre-commit
+
+   ```cmd
+   pip install pre-commit
+   ```
+
+10. Install vscode
+
+    ```cmd
+    choco install vscode
+    ```
 
 ---
 
@@ -250,7 +410,8 @@ Don't forget to give the project a star! Thanks again!
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See [![LICENSE][license-url]][license-file]
+for more information.
 
 ---
 
@@ -265,6 +426,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 To contact me please use the discussion against the relevant release.
+this can be found [here][discussions-url]
 
 Project Link: [https://github.com/RolfMoleman/Terraform-Latest](https://github.com/RolfMoleman/Terraform-Latest)
 
@@ -280,8 +442,10 @@ Project Link: [https://github.com/RolfMoleman/Terraform-Latest](https://github.c
 
 ## Acknowledgments
 
-- [jamestoyer](https://github.com/jamestoyer/) - for the repo [chocolatey-packages](https://github.com/jamestoyer/chocolatey-packages) which provided the inspiration for this repository.
-- [othneildrew](https://github.com/othneildrew) - for the repo [Best-README-Template](https://github.com/othneildrew/Best-README-Template) which provided the inspiration for this readme.
+- [jamestoyer](https://github.com/jamestoyer/)
+  - for the repo [chocolatey-packages](https://github.com/jamestoyer/chocolatey-packages)
+- [othneildrew](https://github.com/othneildrew)
+  - for the repo [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
 - [sabihsaleh](https://github.com/sabihsaleh) - for the inspiration to do this.
 
 ---
@@ -295,13 +459,13 @@ Project Link: [https://github.com/RolfMoleman/Terraform-Latest](https://github.c
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-
 <!-- BADGES AND SHIELDS -->
 
 <!-- GITHUB LINKS -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/RolfMoleman/Terraform-Latest.svg?style=for-the-badge
 [contributors-url]: https://github.com/RolfMoleman/Terraform-Latest/graphs/contributors
+[discussions-url]: https://github.com/RolfMoleman/Terraform-Latest/discussions
 [forks-shield]: https://img.shields.io/github/forks/RolfMoleman/Terraform-Latest.svg?style=for-the-badge
 [forks-url]: https://github.com/RolfMoleman/Terraform-Latest/network/members
 [stars-shield]: https://img.shields.io/github/stars/RolfMoleman/Terraform-Latest.svg?style=for-the-badge
@@ -316,8 +480,8 @@ Project Link: [https://github.com/RolfMoleman/Terraform-Latest](https://github.c
 <!-- IMAGES AND ICONS -->
 
 [logo-image]: /.assets/logo.png
+[product-screenshot]: /.assets/screenshot.png
 
 <!-- MARKDOWN DOCUMENT LINKS -->
-
-
+[license-file]: /LICENSE
 <!-- PIPELINE LINKS -->

@@ -15,13 +15,12 @@ updates:
       timezone: "Europe/London"
     target-branch: "main"
 
-
   - package-ecosystem: "terraform"
     directory: "/"
     groups:
       terraform-latest:
         patterns:
-            - "*" # A wildcard that matches all dependencies in the package
+          - "*" # A wildcard that matches all dependencies in the package
     open-pull-requests-limit: 100
     schedule:
       interval: "daily"

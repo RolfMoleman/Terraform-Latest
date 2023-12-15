@@ -15,8 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install AU module
+        shell: pwsh
         run: |
-          pwsh -Command "Install-Module -Name AU -Force -Confirm $false"
+          Install-Module -Name AU -Force -Confirm:$false
+          Import-Module -Name AU -Force
       - name: Build Module
         shell: pwsh
         run: ./.scripts/update_nuspec.ps1

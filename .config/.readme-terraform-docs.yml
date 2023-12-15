@@ -81,7 +81,7 @@ content: |-
 
   ---
 output:
-  file: README.md
+  file: README.MD
   mode: inject
   template: |-
     <!-- start_of_terraform_docs -->

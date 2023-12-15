@@ -279,3 +279,14 @@ jobs:
         with:
           github-token: "${{ secrets.PAT }}"
           config: .github/auto-merge.yml
+
+  renovate-merge-bot:
+    name: "auto merge renovate"
+    runs-on: ubuntu-latest
+    if: ${{ (github.actor == 'dependabot[bot]' || github.actor == 'renovate[bot]') && github.event_name == 'pull_request' && (needs.MegaLinter.result == 'success' || needs.MegaLinter.result == 'failure')}}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: int128/renovate-merge-bot@v1
+        with:
+          github-app-id: ${{ secrets.BOT_APP_ID }}
+          github-app-private-key: ${{ secrets.BOT_APP_PRIVATE_KEY }}

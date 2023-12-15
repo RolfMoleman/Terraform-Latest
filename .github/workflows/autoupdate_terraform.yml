@@ -30,10 +30,10 @@ jobs:
         if: ${{ startsWith(github.ref, 'refs/heads/dependabot/') }}
         run: |
           git add terraform.nuspec
-          git commit -m "[dependabot skip] Update terraform.nuspec"
+          git commit -m "[dependabot skip] Update terraform-latest.nuspec"
 
       - name: Commit changes to terraform.nuspec
         if: ${{ startsWith(github.ref, 'refs/heads/renovate/') }}
         run: |
           git add terraform.nuspec
-          git commit -m "[renovate skip] Update terraform.nuspec"
+          git commit -m "[renovate skip] Update terraform-latest.nuspec"

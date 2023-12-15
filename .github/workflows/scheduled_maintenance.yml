@@ -57,20 +57,20 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
 
-      - name: Render terraform docs inside the README.md and push changes back to PR branch
+      - name: Render terraform docs inside the README.MD and push changes back to PR branch
         uses: terraform-docs/gh-actions@v1.0.0
         if: success() || failure()
         with:
           #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
           config-file: "/.config/.readme-terraform-docs.yml"
           find-dir: .
-          git-commit-message: "[Terraform-docs] Updated readme.md"
+          git-commit-message: "[Terraform-docs] Updated readme.MD"
           git-push: true
           git-push-sign-off: true
           git-push-user-email: CAG-terraform-docs@ca-grp.com
           git-push-user-name: CAG-terraform-docs
           indention: 4
-          output-file: README.md
+          output-file: README.MD
           #output-format: "markdown table"
           #output-method: inject
           ##recursive: true
@@ -78,20 +78,20 @@ jobs:
           template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
           ##working-dir: .
 
-      - name: Render terraform docs inside the TERRAFORM.md and push changes back to PR branch
+      - name: Render terraform docs inside the TERRAFORM.MD and push changes back to PR branch
         uses: terraform-docs/gh-actions@v1.0.0
         if: success() || failure()
         with:
           #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
           config-file: "/.config/.terraform-terraform-docs.yml"
           find-dir: .
-          git-commit-message: "[Terraform-docs] Updated TERRAFORM.md"
+          git-commit-message: "[Terraform-docs] Updated TERRAFORM.MD"
           git-push: true
           git-push-sign-off: true
           git-push-user-email: CAG-terraform-docs@ca-grp.com
           git-push-user-name: CAG-terraform-docs
           indention: 4
-          output-file: TERRAFORM.md
+          output-file: TERRAFORM.MD
           #output-format: "markdown table"
           #output-method: inject
           #recursive: true

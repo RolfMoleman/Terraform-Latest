@@ -1,7 +1,7 @@
 formatter: "markdown table" # this is required
 version: "0.16"
-header-from: /terraform-docs/tf_header.txt
-footer-from: /terraform-docs/tf_footer.txt
+#header-from: /terraform-docs/tf_header.txt
+#footer-from: /terraform-docs/tf_footer.txt
 recursive:
   enabled: false
   #path: .terraform\modules
@@ -11,7 +11,7 @@ sections:
   #hide-all: false # deprecated in v0.13.0, removed in v0.15.0
   #show-all: true  # deprecated in v0.13.0, removed in v0.15.0
 content: |-
-  {{ .Header }}
+  The below documentation was generated via Terraform docs using pre-commit
 
   ---
 
@@ -70,16 +70,6 @@ content: |-
   [(Back to the Table of Contents)](#table-of-contents)
 
   ---
-
-  {{ .Footer }}
-
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
 output:
   file: README.MD
   mode: inject
@@ -101,7 +91,7 @@ settings:
   escape: true
   hide-empty: false
   html: true
-  indent: 3
+  indent: 4
   lockfile: true
   read-comments: true
   required: true

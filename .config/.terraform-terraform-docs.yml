@@ -1,7 +1,7 @@
 formatter: "markdown table" # this is required
 version: "0.16"
 header-from: /terraform-docs/tf_header.txt
-footer-from: /terraform-docs/tf_footer.txt
+#footer-from: /terraform-docs/tf_footer.txt
 recursive:
   enabled: false
   #path: .terraform\modules
@@ -62,16 +62,6 @@ content: |-
   ---
 
   {{ .Modules }}
-
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Top)](#Terraform)
-
-  ---
-
-  {{ .Footer }}
 
   ---
 

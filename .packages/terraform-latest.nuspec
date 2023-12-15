@@ -7,49 +7,32 @@ enclosed in quotation marks, you should use an editor that supports UTF-8, not t
     https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>terraform-latest</id>
     <title>Terraform</title>
-    <version>1.6.5</version>
+    <version>1.6.6</version>
     <authors>Mitchell Hashimoto, HashiCorp</authors>
     <owners>RolfMoleman3391</owners>
-    <summary>Terraform is a tool for building, changing, and versioning infrastructure safely and
-      efficiently. Terraform can manage existing and popular service providers as well as custom
-      in-house solutions.</summary>
+    <summary>Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions.</summary>
     <description>
-      Terraform is a tool for building, changing, and versioning infrastructure safely and
-      efficiently. Terraform can manage existing and popular service providers as well as custom
-      in-house solutions.
+Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions.
 
-      The key features of Terraform are:
+The key features of Terraform are:
 
-      * **Infrastructure as Code**: Infrastructure is described using a high-level configuration
-      syntax. This allows a blueprint of your datacenter to be versioned and treated as you would
-      any other code. Additionally, infrastructure can be shared and re-used.
-      * **Execution Plans**: Terraform has a "planning" step where it generates an *execution plan*.
-      The execution plan shows what Terraform will do when you call apply. This lets you avoid any
-      surprises when Terraform manipulates infrastructure.
-      * **Resource Graph**: Terraform builds a graph of all your resources, and parallelizes the
-      creation and modification of any non-dependent resources. Because of this, Terraform builds
-      infrastructure as efficiently as possible, and operators get insight into dependencies in
-      their infrastructure.
-      * **Change Automation**: Complex changesets can be applied to your infrastructure with minimal
-      human interaction. With the previously mentioned execution plan and resource graph, you know
-      exactly what Terraform will change and in what order, avoiding many possible human errors.
+* **Infrastructure as Code**: Infrastructure is described using a high-level configuration syntax. This allows a blueprint of your datacenter to be versioned and treated as you would any other code. Additionally, infrastructure can be shared and re-used.
+* **Execution Plans**: Terraform has a "planning" step where it generates an *execution plan*. The execution plan shows what Terraform will do when you call apply. This lets you avoid any surprises when Terraform manipulates infrastructure.
+* **Resource Graph**: Terraform builds a graph of all your resources, and parallelizes the creation and modification of any non-dependent resources. Because of this, Terraform builds infrastructure as efficiently as possible, and operators get insight into dependencies in their infrastructure.
+* **Change Automation**: Complex changesets can be applied to your infrastructure with minimal human interaction. With the previously mentioned execution plan and resource graph, you know exactly what Terraform will change and in what order, avoiding many possible human errors.
 
-      For more information, see the [introduction section](http://www.terraform.io/intro) of the
-      Terraform website.
+For more information, see the [introduction section](http://www.terraform.io/intro) of the Terraform website.
     </description>
     <releaseNotes>
-      ## 1.6.5 (November 29, 2023)
+## 1.6.6 (December 13, 2023)
 
-      BUG FIXES:
-      * backend/s3: Fixes parsing errors in shared config and credentials files.
-      ([#34313](https://github.com/hashicorp/terraform/pull/34313))
-      * backend/s3: Fixes error with AWS SSO when using FIPS endpoints.
-      ([#34313](https://github.com/hashicorp/terraform/pull/34313))
+BUG FIXES:
+* `terraform test`: Stop attempting to destroy run blocks that have no actual infrastructure to destroy. This fixes an issue where attempts to destroy "verification" run blocks that load only data sources would fail if the underlying infrastructure referenced by the run blocks had already been destroyed. ([#34331](https://github.com/hashicorp/terraform/pull/34331))
+* cloud: prevent running saved cloud plans in VCS-connected workspaces. Saved plans might be applied later, and VCS workspaces shouldn't apply configurations that don't come from their designated VCS branch.
+* core: Unmanaged plugins (mainly used by provider acceptance testing) would not have a provider address set, preventing the caching of their schemas ([#34380](https://github.com/hashicorp/terraform/issues/34380))
 
-
-      ## Previous Releases
-      For more information on previous releases, check out the changelog on
-      [GitHub](https://github.com/hashicorp/terraform/blob/v1.6.5/CHANGELOG.md).</releaseNotes>
+## Previous Releases
+For more information on previous releases, check out the changelog on [GitHub](https://github.com/hashicorp/terraform/blob/v1.6.6/CHANGELOG.md).</releaseNotes>
     <projectUrl>http://www.terraform.io</projectUrl>
     <docsUrl>https://www.terraform.io/docs/index.html</docsUrl>
     <bugTrackerUrl>https://github.com/hashicorp/terraform/issues</bugTrackerUrl>

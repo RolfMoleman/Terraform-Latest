@@ -52,14 +52,14 @@ function global:au_AfterUpdate {
     # Note: Cannot use au_SearchReplace for the releaseNotes because they are multi-lined
     $releaseNotes = Get-ReleaseNotes $Latest.Version $Latest.ChangelogUrl
     Write-Verbose $releaseNotes
-    $packagespath = '../../.packages'
+    $packagespath = '/../.packages'
     $nuspec = Join-Path $packagespath "$($Latest.PackageName).nuspec" -Resolve
     Set-ReleaseNotes $nuspec $releaseNotes
 }
 
 function global:au_SearchReplace {
     @{
-        '.\chocolateyInstall.ps1' = @{
+        '..\.scripts\chocolateyInstall.ps1' = @{
             "(?i)(^[$]url\s*=\s*)'.*'"        = "`${1}'$($Latest.URL32)'"
             "(?i)(^[$]url64\s*=\s*)'.*'"      = "`${1}'$($Latest.URL64)'"
             "(?i)(^[$]checksum\s*=\s*)'.*'"   = "`${1}'$($Latest.Checksum32)'"

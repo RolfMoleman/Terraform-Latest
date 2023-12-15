@@ -28,24 +28,6 @@ The below documentation was generated via Terraform docs using pre-commit
 
 ---
 
-<!-- consuming Module_Name -->
-## Consuming Module_Name
-
-To consume this module add the following to your module.tf:
-```hcl
-module "Module_Name" {
-	 source  = "github.com/constellationautomotivegroup/Module_Name.git"
-}
-```
-
----
-
-<!-- Readme Navigation -->
-
-[(Back to the Top)](#Terraform)
-
----
-
 ## Resources
 
 No resources.
